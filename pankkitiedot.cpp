@@ -61,4 +61,20 @@ int Asiakastili::VertaaTiliNro(int luku)
 	else
 		return 0;
 }
+/* Selvitä löytyykö käytössä olevasta oliotaulukosta oliota eli 
+asiakasta, jolla on sama tilinumero kuin ohjelmalle juuri syötetty
+tilinumero. Jos oliotaulukko (asiakasrekisteri[5]) sisältää asiakkaan,
+jolla on sama numero, tulee ohjelman asettaa bool-muuttujalle "loytyi" 
+arvo "true", sekä kutsua täsmäävän olion metodia "NaytaTiedot()".*/
+		  for (int i = 0; i < 6; i++)
+		  {
+			  		  /*Tilinumero, jota haetaan
+		  oliotaulukon olioista sijaitsee muuttujassa "tilin_nro".*/
+			  if (asiakasrekisteri[i].VertaaTiliNro(tilin_nro) == 1)
+			  {
+				  loytyi = true;
+				  /* Olioiden funktioihin viitataan pistenotaatiolla. */
+				  asiakasrekisteri[i].NaytaTiedot();
+			  }
+		  }
 
